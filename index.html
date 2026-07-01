@@ -1,44 +1,136 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <title>Dark Souls Archiv</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gabeljunge</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg,#0f172a,#1e293b);
+    color: white;
+    font-family: Segoe UI, Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+h1 {
+    font-size: 5rem;
+    color: #facc15;
+    text-shadow: 0 0 20px rgba(250,204,21,.7);
+}
+
+.subtitle {
+    color: #cbd5e1;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: white;
+    border-radius: 12px;
+    background: #2563eb;
+    transition: .3s;
+}
+
+.hero-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-3px);
+}
+
+.cards {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 25px;
+    padding: 50px 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.4);
+}
+
+.card h2 {
+    color: #facc15;
+    margin-bottom: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #94a3b8;
+}
+</style>
+
 </head>
 <body>
 
 <header>
-    <h1>Dark Souls Archiv</h1>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="bosses.html">Bosses</a>
-        <a href="lore.html">Lore</a>
-        <a href="builds.html">Builds</a>
-    </nav>
+<h1>Gabeljunge</h1>
+
+<p class="subtitle">
+Die offizielle inoffizielle Website des legendären Gabeljungen.
+</p>
+
+<a class="hero-button" href="https://www.youtube.com" target="_blank">
+YouTube besuchen
+</a>
+
 </header>
 
-<section class="hero">
+<section class="cards">
 
-    <!-- Eigene Bildquelle einsetzen -->
+<div class="card">
+<h2>Geschichte</h2>
+<p>
+Der Gabeljunge ist ein rätselhafter Charakter, dessen wahre Herkunft bis heute ungeklärt ist.
+</p>
+</div>
 
-    <img src="BILD_URL_HIER" alt="Hero">
+<div class="card">
+<h2>Legenden</h2>
+<p>
+Viele Geschichten berichten von unglaublichen Taten und epischen Abenteuern.
+</p>
+</div>
 
-    <div class="overlay">
-        <h2>Prepare To Die</h2>
-    </div>
+<div class="card">
+<h2>Artefakte</h2>
+<p>
+Zu den bekanntesten Relikten zählt natürlich die legendäre Gabel.
+</p>
+</div>
 
 </section>
 
-<section>
-
-    <h2>Willkommen</h2>
-
-    <p>
-        Eine Fanseite über Bosse, Lore und Spielmechaniken.
-    </p>
-
-</section>
+<footer>
+© 2026 Gabeljunge Industries
+</footer>
 
 </body>
 </html>
