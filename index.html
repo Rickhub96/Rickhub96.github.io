@@ -1,106 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>tttriggerwarning — Art Therapist</title>
-<meta name="description" content="Portfolio of tttriggerwarning, art therapist and visual artist — paintings, ink, and mixed media.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Nosifer&family=Cinzel:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+
+<title>Forkboy</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    background:
+        radial-gradient(circle at top,#334155,#0f172a 35%,#020617 100%);
+    color:white;
+    font-family:Segoe UI,Arial,sans-serif;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    padding:50px 20px;
+}
+
+h1{
+    font-size:5rem;
+    color:#facc15;
+    text-shadow:
+        0 0 20px #facc15,
+        0 0 40px #facc15;
+    margin-bottom:30px;
+}
+
+.hero-img{
+    width:350px;
+    max-width:90%;
+    border-radius:25px;
+    border:3px solid #facc15;
+    box-shadow:
+        0 0 25px rgba(250,204,21,.5),
+        0 0 80px rgba(250,204,21,.3);
+    margin-bottom:40px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.card{
+    background:rgba(255,255,255,0.06);
+    backdrop-filter:blur(12px);
+    border-radius:20px;
+    padding:25px;
+    border:1px solid rgba(255,255,255,0.15);
+}
+
+.label{
+    color:#94a3b8;
+    margin-bottom:10px;
+    font-size:1rem;
+}
+
+.value{
+    font-size:2.2rem;
+    font-weight:bold;
+    color:#facc15;
+}
+
+button{
+    background:linear-gradient(135deg,#facc15,#f97316);
+    border:none;
+    color:black;
+    padding:16px 30px;
+    border-radius:999px;
+    font-size:1.1rem;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+}
+
+button:hover{
+    transform:translateY(-3px);
+}
+
+.footer-link{
+    display:block;
+    margin-top:30px;
+    color:#93c5fd;
+    text-decoration:none;
+}
+
+.footer-link:hover{
+    color:white;
+}
+
+@media(max-width:700px){
+
+    h1{
+        font-size:3rem;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+
 </head>
 <body>
 
-<div class="construction-banner">Site under construction</div>
+<div class="container">
 
-<header class="site-header">
-  <div class="header-inner">
-    <a href="index.html" class="logo">tttriggerwarning</a>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="site-nav">
-      <a href="index.html" class="nav-link active">Home</a>
-      <a href="the-red-threat.html" class="nav-link">The Red Threat</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-    </nav>
-  </div>
-</header>
+<h1>Forkboy</h1>
 
-<main>
+<img src="gabeljunge.jpg" class="hero-img" alt="Forkboy">
 
-  <section class="hero">
-    <div class="hero-inner">
-      <p class="hero-eyebrow">Art Therapist</p>
-      <h1 class="hero-title brand-name">tttriggerwarning</h1>
-      <svg class="hero-divider" viewBox="0 0 140 10" aria-hidden="true">
-        <path d="M0,5 L20,5 L26,2 L34,8 L42,3 L52,7 L60,5 L140,5" fill="none" stroke="#a11c1c" stroke-width="1.3"/>
-      </svg>
-      <p class="hero-tagline">TAKING SPACE 2026</p>
-      <a href="the-red-threat.html" class="btn btn-primary">View The Red Threat</a>
-    </div>
-    <div class="scroll-cue" aria-hidden="true">↓</div>
-  </section>
+<div class="grid">
 
-  <section class="featured container">
-    <div class="section-heading">
-      <span class="section-heading-mark">Selected Works</span>
-      <span class="section-heading-sub">From the catalogue</span>
+    <div class="card">
+        <div class="label">Forkboy Visits</div>
+        <div class="value" id="visitCounter">...</div>
     </div>
 
-    <article class="artwork-row">
-      <div class="artwork-image">
-        <img src="assets/images/1.jpeg" alt="Title pending" loading="lazy">
-      </div>
-      <div class="artwork-text">
-        <span class="artwork-number">No. 01</span>
-        <h3>Title pending</h3>
-        <p class="artwork-meta">Medium pending, 2026</p>
-        <p class="artwork-desc">Description pending.</p>
-      </div>
-    </article>
-
-    <article class="artwork-row reverse">
-      <div class="artwork-image">
-        <img src="assets/images/2.jpeg" alt="Title pending" loading="lazy">
-      </div>
-      <div class="artwork-text">
-        <span class="artwork-number">No. 02</span>
-        <h3>Title pending</h3>
-        <p class="artwork-meta">Medium pending, 2026</p>
-        <p class="artwork-desc">Description pending.</p>
-      </div>
-    </article>
-
-    <article class="artwork-row">
-      <div class="artwork-image">
-        <img src="assets/images/3.jpeg" alt="Title pending" loading="lazy">
-      </div>
-      <div class="artwork-text">
-        <span class="artwork-number">No. 03</span>
-        <h3>Title pending</h3>
-        <p class="artwork-meta">Medium pending, 2026</p>
-        <p class="artwork-desc">Description pending.</p>
-      </div>
-    </article>
-
-    <div class="featured-cta">
-      <a href="the-red-threat.html" class="btn">View The Red Threat</a>
+    <div class="card">
+        <div class="label">Forkboy Count</div>
+        <div class="value" id="voteCounter">...</div>
     </div>
-  </section>
 
-</main>
+</div>
 
-<footer class="site-footer">
-  <div class="container">
-    <p class="footer-mark">tttriggerwarning</p>
-    <p class="footer-copy">&copy; <span data-year>2026</span> tttriggerwarning. All rights reserved.</p>
-    <a href="mailto:hello@tttriggerwarning.art" class="footer-mail">hello@tttriggerwarning.art</a>
-  </div>
-</footer>
+<button onclick="voteForkboy()">
+    Forkboy Count
+</button>
 
-<script src="js/main.js"></script>
+<a class="footer-link" href="https://youtube.com">
+    YouTube
+</a>
+
+</div>
+
+<script>
+
+let visits = localStorage.getItem("forkboyVisits") || 0;
+visits++;
+localStorage.setItem("forkboyVisits", visits);
+document.getElementById("visitCounter").textContent = visits;
+
+let votes = localStorage.getItem("forkboyVotes") || 0;
+document.getElementById("voteCounter").textContent = votes;
+
+function voteForkboy() {
+
+    votes++;
+
+    localStorage.setItem("forkboyVotes", votes);
+
+    document.getElementById("voteCounter").textContent = votes;
+}
+
+</script>
+
 </body>
 </html>
