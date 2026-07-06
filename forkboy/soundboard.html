@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Klang-Schmiede — Gabeljunge.io</title>
+<link rel="icon" href="assets/gabeljunge.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css" />
+<style>
+  .sound-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .sound-btn {
+    background: linear-gradient(180deg, var(--marble-light), var(--marble));
+    border: var(--border-gold);
+    border-radius: var(--radius);
+    color: var(--parchment);
+    padding: 1.2rem 0.8rem;
+    cursor: pointer;
+    text-align: center;
+    font-family: var(--font-display);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+  }
+  .sound-btn:hover { border-color: var(--bronze-bright); }
+  .sound-btn .emoji { display:block; font-size: 1.8rem; margin-bottom: 0.4rem; }
+  #visualizer {
+    width: 100%;
+    height: 120px;
+    background: rgba(6,11,26,0.6);
+    border: var(--border-gold);
+    border-radius: var(--radius);
+    display: block;
+  }
+  .volume-row { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; }
+  .volume-row label { font-family: var(--font-hud); font-size: 0.85rem; white-space: nowrap; }
+</style>
+</head>
+<body>
+<canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html"><img src="assets/gabeljunge.png" alt="" /> Gabeljunge.io</a>
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Start</a></li>
+      <li><a href="orakel.html">Orakel</a></li>
+      <li><a href="clicker.html">Gunst-Schmiede</a></li>
+      <li><a href="arena.html">Meteor-Arena</a></li>
+      <li><a href="quiz.html">Wissensarena</a></li>
+      <li><a href="soundboard.html">Klang-Schmiede</a></li>
+      <li><a href="memory.html">Gedächtnistempel</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="page">
+  <section class="tablet">
+    <p class="hud" style="color:var(--bronze);">WEB AUDIO API · KEINE AUDIODATEIEN</p>
+    <h1>Klang-Schmiede</h1>
+    <p class="lede">Alle Klänge hier werden live im Browser synthetisiert — Donner, Fanfare und Jubel
+      entstehen aus Oszillatoren und gefiltertem Rauschen, nicht aus Audiodateien.</p>
+
+    <div class="sound-grid">
+      <button class="sound-btn" data-sound="thunder"><span class="emoji">⚡</span>Donnergrollen</button>
+      <button class="sound-btn" data-sound="fanfare"><span class="emoji">📯</span>Fanfare</button>
+      <button class="sound-btn" data-sound="cheer"><span class="emoji">🎉</span>Jubel</button>
+      <button class="sound-btn" data-sound="coin"><span class="emoji">✨</span>Gunst-Klang</button>
+    </div>
+
+    <canvas id="visualizer" width="800" height="120"></canvas>
+
+    <div class="volume-row">
+      <label for="volume">Lautstärke</label>
+      <input type="range" id="volume" min="0" max="1" step="0.01" value="0.6" />
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Falls dein Browser Audio erst nach einer Nutzerinteraktion erlaubt: Ein Klick auf einen Button genügt.</p>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/soundboard.js"></script>
+</body>
+</html>

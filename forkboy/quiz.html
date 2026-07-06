@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wissensarena — Gabeljunge.io</title>
+<link rel="icon" href="assets/gabeljunge.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css" />
+<style>
+  .progress-track {
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(6,11,26,0.6);
+    border: var(--border-gold);
+    overflow: hidden;
+    margin-bottom: var(--space-3);
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--bronze), var(--bronze-bright));
+    width: 0%;
+    transition: width 0.4s ease;
+  }
+  .option-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: rgba(6,11,26,0.4);
+    border: var(--border-gold);
+    color: var(--parchment);
+    padding: 0.8rem 1rem;
+    border-radius: var(--radius);
+    margin-bottom: 0.7rem;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .option-btn:hover { border-color: var(--bronze-bright); }
+  .option-btn.correct { border-color: var(--success); background: rgba(111,174,106,0.18); }
+  .option-btn.wrong { border-color: var(--ember); background: rgba(193,68,14,0.18); }
+  .option-btn:disabled { cursor: default; }
+  #confetti-canvas { position: fixed; inset: 0; pointer-events: none; z-index: 50; }
+</style>
+</head>
+<body>
+<canvas id="ambient-canvas" aria-hidden="true"></canvas>
+<canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html"><img src="assets/gabeljunge.png" alt="" /> Gabeljunge.io</a>
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Start</a></li>
+      <li><a href="orakel.html">Orakel</a></li>
+      <li><a href="clicker.html">Gunst-Schmiede</a></li>
+      <li><a href="arena.html">Meteor-Arena</a></li>
+      <li><a href="quiz.html">Wissensarena</a></li>
+      <li><a href="soundboard.html">Klang-Schmiede</a></li>
+      <li><a href="memory.html">Gedächtnistempel</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="page">
+  <section class="tablet">
+    <p class="hud" style="color:var(--bronze);">FRAGE <span id="q-current">1</span> / <span id="q-total">–</span></p>
+    <h1>Wissensarena</h1>
+    <div class="progress-track"><div class="progress-fill" id="progress"></div></div>
+
+    <div id="quiz-body">
+      <h2 id="q-text" style="font-size:1.2rem;">Lade Fragen …</h2>
+      <div id="q-options"></div>
+    </div>
+
+    <div id="quiz-result" style="display:none;" class="center">
+      <h2 id="result-title">Ergebnis</h2>
+      <p class="lede" id="result-text"></p>
+      <button class="btn primary" id="btn-restart">Nochmal spielen</button>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Alle Fragen sind eigene Fan-Trivia rund um den Gabeljungen und seinen Cheat-Code.</p>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/quiz.js"></script>
+</body>
+</html>
