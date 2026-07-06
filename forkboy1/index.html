@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gabeljunge.io — Tines of Power</title>
+<meta name="description" content="Ein Fan-Projekt über den Gabeljungen aus Age of Mythology: Retold, mit vielen JavaScript-Spielereien." />
+<link rel="icon" href="assets/gabeljunge.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html"><img src="assets/gabeljunge.png" alt="" /> Gabeljunge.io</a>
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Start</a></li>
+      <li><a href="orakel.html">Orakel</a></li>
+      <li><a href="clicker.html">Gunst-Schmiede</a></li>
+      <li><a href="arena.html">Meteor-Arena</a></li>
+      <li><a href="quiz.html">Wissensarena</a></li>
+      <li><a href="soundboard.html">Klang-Schmiede</a></li>
+      <li><a href="memory.html">Gedächtnistempel</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="page">
+
+  <section class="hero">
+    <div>
+      <p class="hud" style="color: var(--bronze);">CHEAT-CODE · TINES OF POWER</p>
+      <h1>Der Gabeljunge</h1>
+      <p class="lede">
+        Ein einziger Cheat-Code genügt, und er erscheint im Stadtzentrum: der Gabeljunge,
+        die wohl kultigste Spaßeinheit aus <em>Age of Mythology: Retold</em>. Diese Seite ist eine
+        Hommage an ihn — und gleichzeitig ein Showcase, wie viele verschiedene JavaScript-Spielereien
+        sich mit reinem HTML/CSS/JS auf GitHub Pages umsetzen lassen. Kein Framework, kein Build-Schritt.
+      </p>
+      <p style="display:flex; gap:0.8rem; flex-wrap:wrap;">
+        <a class="btn primary" href="clicker.html">Gunst-Schmiede öffnen</a>
+        <a class="btn" href="orakel.html">Das Orakel befragen</a>
+      </p>
+      <p class="lede" style="margin-top:1.5rem; font-size:0.9rem;">
+        Psst — tippe irgendwo auf dieser Seite <span class="hud" style="color:var(--bronze-bright)">tines of power</span>.
+      </p>
+    </div>
+    <div class="hero-figure">
+      <img src="assets/gabeljunge.png" alt="Der Gabeljunge" width="320" height="320" />
+    </div>
+  </section>
+
+  <section class="tablet reveal">
+    <h2>Was ist der Gabeljunge überhaupt?</h2>
+    <p>
+      In <em>Age of Mythology: Retold</em> lässt der Cheat-Code <code>TINES OF POWER</code> eine kleine
+      Figur mit einer Mistgabel im Stadtzentrum erscheinen — ohne Kampfwert, aber mit maximalem
+      Unterhaltungswert. Unter Spielern wurde er schnell zum liebsten Nonsens-Cheat des Spiels:
+      keine Ressourcen, keine Strategie, nur pure Freude an einem Jungen mit einer Gabel.
+    </p>
+    <div class="divider" aria-hidden="true">✦</div>
+    <p class="lede">
+      Ersetze <code>assets/gabeljunge.png</code> durch dein eigenes Bild — es wird automatisch auf
+      jeder Unterseite dieser Website verwendet.
+    </p>
+  </section>
+
+  <section class="mt-4 reveal">
+    <h2 class="center">Die Spielereien</h2>
+    <p class="lede center" style="margin: 0 auto var(--space-3);">
+      Jede Kachel ist eine eigene Unterseite mit einer anderen Web-Technik im Mittelpunkt.
+    </p>
+    <div class="grid">
+      <a class="card" href="orakel.html">
+        <span class="icon">🔮</span>
+        <h3>Orakel des Gabeljungen</h3>
+        <p>Zufalls-Sprüche per Fetch/JSON, zum Vorlesen und Teilen.</p>
+        <span class="tech">fetch · SpeechSynthesis · Clipboard · Web Share</span>
+      </a>
+      <a class="card" href="clicker.html">
+        <span class="icon">⚒️</span>
+        <h3>Gunst-Schmiede</h3>
+        <p>Idle-Clicker: Gunst sammeln, Auto-Klicker kaufen, Fortschritt bleibt gespeichert.</p>
+        <span class="tech">localStorage · setInterval · Web Audio</span>
+      </a>
+      <a class="card" href="arena.html">
+        <span class="icon">☄️</span>
+        <h3>Meteor-Arena</h3>
+        <p>Weiche mit dem Gabeljungen den fallenden Meteoren aus. Highscore inklusive.</p>
+        <span class="tech">Canvas 2D · requestAnimationFrame · Fullscreen · Vibration</span>
+      </a>
+      <a class="card" href="quiz.html">
+        <span class="icon">📜</span>
+        <h3>Wissensarena</h3>
+        <p>Ein kleines Cheat-Code-Quiz mit Fortschrittsbalken und Konfetti-Finale.</p>
+        <span class="tech">Array-Methoden · Canvas-Partikel</span>
+      </a>
+      <a class="card" href="soundboard.html">
+        <span class="icon">🔊</span>
+        <h3>Klang-Schmiede</h3>
+        <p>Donner, Fanfare &amp; Co. — komplett synthetisch erzeugt, kein Audiofile nötig.</p>
+        <span class="tech">Web Audio API · AnalyserNode · Canvas-Visualizer</span>
+      </a>
+      <a class="card" href="memory.html">
+        <span class="icon">🧠</span>
+        <h3>Gedächtnistempel</h3>
+        <p>Klassisches Memory mit mythischen Symbolen und Zeit-/Zugzähler.</p>
+        <span class="tech">CSS-3D-Flip · setTimeout · localStorage-Highscore</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<div id="cheat-overlay" role="status" aria-live="polite">
+  <img src="assets/gabeljunge.png" alt="" />
+  <p>Tines of Power!</p>
+</div>
+
+<footer class="site-footer">
+  <p>Inoffizielles Fan-Projekt über den Gabeljungen aus <em>Age of Mythology: Retold</em>. Kein offizielles
+  World's Edge- / Xbox-Game-Studios-Produkt — nur pure Freude an einer Gabel.</p>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

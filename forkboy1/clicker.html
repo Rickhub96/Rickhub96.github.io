@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gunst-Schmiede — Gabeljunge.io</title>
+<link rel="icon" href="assets/gabeljunge.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css" />
+<style>
+  .forge {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+    align-items: start;
+  }
+  @media (max-width: 760px) { .forge { grid-template-columns: 1fr; } }
+  #gabel-click {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+  }
+  #gabel-click img {
+    width: min(260px, 70vw);
+    border-radius: 50%;
+    border: 3px solid var(--bronze);
+    transition: transform 0.08s ease;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+  #gabel-click:active img { transform: scale(0.94); }
+  .float-pop {
+    position: absolute;
+    font-family: var(--font-hud);
+    color: var(--bronze-bright);
+    font-weight: 700;
+    pointer-events: none;
+    animation: pop-up 0.9s ease-out forwards;
+  }
+  @keyframes pop-up {
+    0% { opacity: 1; transform: translate(-50%, 0); }
+    100% { opacity: 0; transform: translate(-50%, -60px); }
+  }
+  .shop-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    border: var(--border-gold);
+    border-radius: var(--radius);
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.7rem;
+    background: rgba(6,11,26,0.4);
+  }
+  .shop-item .desc h3 { margin: 0 0 0.2rem; font-size: 0.95rem; }
+  .shop-item .desc p { margin: 0; color: var(--parchment-dim); font-size: 0.82rem; }
+</style>
+</head>
+<body>
+<canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html"><img src="assets/gabeljunge.png" alt="" /> Gabeljunge.io</a>
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Start</a></li>
+      <li><a href="orakel.html">Orakel</a></li>
+      <li><a href="clicker.html">Gunst-Schmiede</a></li>
+      <li><a href="arena.html">Meteor-Arena</a></li>
+      <li><a href="quiz.html">Wissensarena</a></li>
+      <li><a href="soundboard.html">Klang-Schmiede</a></li>
+      <li><a href="memory.html">Gedächtnistempel</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="page">
+  <section class="tablet">
+    <p class="hud" style="color:var(--bronze);">SPEICHERSTAND: localStorage</p>
+    <h1>Gunst-Schmiede</h1>
+    <p class="lede">Klicke den Gabeljungen, sammle Gunst und kaufe Auto-Klicker. Der Fortschritt bleibt
+      in deinem Browser gespeichert — auch nach einem Neuladen.</p>
+
+    <div class="hud-bar">
+      <div class="hud-stat"><span class="label">Gunst</span><span class="value" id="stat-gunst">0</span></div>
+      <div class="hud-stat"><span class="label">Pro Sekunde</span><span class="value" id="stat-rate">0</span></div>
+      <div class="hud-stat"><span class="label">Klicks gesamt</span><span class="value" id="stat-clicks">0</span></div>
+    </div>
+
+    <div class="forge">
+      <div class="center">
+        <button id="gabel-click" aria-label="Gabeljungen anklicken für Gunst">
+          <img src="assets/gabeljunge.png" alt="" />
+        </button>
+        <p class="lede" style="margin-top:1rem;">+<span id="click-power">1</span> Gunst pro Klick</p>
+      </div>
+
+      <div>
+        <h2 style="font-size:1.1rem;">Schmiede-Upgrades</h2>
+        <div id="shop"></div>
+        <button class="btn danger" id="btn-reset" style="margin-top:1rem;">Fortschritt zurücksetzen</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="cheat-overlay" role="status" aria-live="polite">
+  <img src="assets/gabeljunge.png" alt="" />
+  <p>Tines of Power!</p>
+</div>
+
+<footer class="site-footer">
+  <p>Rein clientseitig — dein Spielstand verlässt nie deinen Browser.</p>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/clicker.js"></script>
+</body>
+</html>

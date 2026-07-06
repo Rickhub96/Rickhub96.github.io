@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gedächtnistempel — Gabeljunge.io</title>
+<link rel="icon" href="assets/gabeljunge.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css" />
+<style>
+  .memory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.7rem;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .mem-card {
+    aspect-ratio: 1;
+    perspective: 800px;
+    cursor: pointer;
+  }
+  .mem-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.45s;
+  }
+  .mem-card.flipped .mem-card-inner,
+  .mem-card.matched .mem-card-inner { transform: rotateY(180deg); }
+  .mem-face {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    backface-visibility: hidden;
+    font-size: 1.8rem;
+    border: var(--border-gold);
+  }
+  .mem-front { background: linear-gradient(160deg, var(--marble-light), var(--marble)); color: var(--bronze); }
+  .mem-back { background: var(--deep-sea); transform: rotateY(180deg); }
+  .mem-back img { width: 65%; height: 65%; object-fit: contain; border-radius: 50%; }
+  .mem-card.matched .mem-face { border-color: var(--success); opacity: 0.85; }
+</style>
+</head>
+<body>
+<canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html"><img src="assets/gabeljunge.png" alt="" /> Gabeljunge.io</a>
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Start</a></li>
+      <li><a href="orakel.html">Orakel</a></li>
+      <li><a href="clicker.html">Gunst-Schmiede</a></li>
+      <li><a href="arena.html">Meteor-Arena</a></li>
+      <li><a href="quiz.html">Wissensarena</a></li>
+      <li><a href="soundboard.html">Klang-Schmiede</a></li>
+      <li><a href="memory.html">Gedächtnistempel</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="page">
+  <section class="tablet">
+    <p class="hud" style="color:var(--bronze);">CSS-3D-TRANSFORM · localStorage-Bestzeit</p>
+    <h1>Gedächtnistempel</h1>
+    <p class="lede">Finde alle Paare mythischer Symbole — eine Karte zeigt den Gabeljungen selbst.</p>
+
+    <div class="hud-bar">
+      <div class="hud-stat"><span class="label">Züge</span><span class="value" id="stat-moves">0</span></div>
+      <div class="hud-stat"><span class="label">Zeit</span><span class="value" id="stat-time">00:00</span></div>
+      <div class="hud-stat"><span class="label">Beste Zeit</span><span class="value" id="stat-best">–</span></div>
+    </div>
+
+    <div class="memory-grid" id="memory-grid"></div>
+
+    <p class="center mt-4">
+      <button class="btn primary" id="btn-shuffle">Neu mischen</button>
+    </p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Symbole sind allgemeine mythische Glyphen — keine Spiel-Icons.</p>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/memory.js"></script>
+</body>
+</html>

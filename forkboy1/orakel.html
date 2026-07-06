@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Orakel des Gabeljungen — Gabeljunge.io</title>
+<link rel="icon" href="assets/gabeljunge.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html"><img src="assets/gabeljunge.png" alt="" /> Gabeljunge.io</a>
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Start</a></li>
+      <li><a href="orakel.html">Orakel</a></li>
+      <li><a href="clicker.html">Gunst-Schmiede</a></li>
+      <li><a href="arena.html">Meteor-Arena</a></li>
+      <li><a href="quiz.html">Wissensarena</a></li>
+      <li><a href="soundboard.html">Klang-Schmiede</a></li>
+      <li><a href="memory.html">Gedächtnistempel</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="page">
+  <section class="tablet">
+    <p class="hud" style="color:var(--bronze);">DATENQUELLE: assets/data/zitate.json</p>
+    <h1>Orakel des Gabeljungen</h1>
+    <p class="lede">Befrage das Orakel — es zieht einen zufälligen Spruch aus einer JSON-Datei, die im
+      Hintergrund per <code>fetch()</code> geladen wird.</p>
+
+    <div class="divider" aria-hidden="true">✦</div>
+
+    <blockquote id="quote" style="font-family: var(--font-display); font-size: 1.3rem; min-height: 4.5rem;
+      color: var(--parchment); border-left: 3px solid var(--bronze); padding-left: 1.2rem; margin: 1.5rem 0;
+      transition: opacity 0.3s ease;">
+      Lade Weisheiten …
+    </blockquote>
+
+    <div style="display:flex; gap:0.8rem; flex-wrap:wrap;">
+      <button class="btn primary" id="btn-orakel">Neuer Spruch</button>
+      <button class="btn" id="btn-speak">🔊 Vorlesen</button>
+      <button class="btn" id="btn-copy">📋 Kopieren</button>
+      <button class="btn" id="btn-share">📤 Teilen</button>
+    </div>
+    <p id="status" class="lede" role="status" aria-live="polite" style="min-height:1.4rem; margin-top:0.8rem;"></p>
+  </section>
+</main>
+
+<div id="cheat-overlay" role="status" aria-live="polite">
+  <img src="assets/gabeljunge.png" alt="" />
+  <p>Tines of Power!</p>
+</div>
+
+<footer class="site-footer">
+  <p>Alle Sprüche sind selbst ausgedacht — reine Hommage, keine Spielzitate.</p>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/orakel.js"></script>
+</body>
+</html>
