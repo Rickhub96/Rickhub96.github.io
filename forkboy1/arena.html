@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Meteor-Arena — Gabeljunge.io</title>
+<link rel="icon" href="assets/gabeljunge.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css" />
+<style>
+  #game-wrap { position: relative; max-width: 720px; margin: 0 auto; }
+  #game-canvas {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: linear-gradient(180deg, #050a18, #0d1836);
+    border: var(--border-gold);
+    border-radius: var(--radius);
+    touch-action: none;
+    display: block;
+  }
+  #game-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: rgba(6,11,26,0.85);
+    text-align: center;
+    padding: 1rem;
+    border-radius: var(--radius);
+  }
+  #game-overlay.hidden { display: none; }
+  .controls-hint { font-size: 0.85rem; color: var(--parchment-dim); text-align:center; margin-top: 0.8rem;}
+</style>
+</head>
+<body>
+<canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html"><img src="assets/gabeljunge.png" alt="" /> Gabeljunge.io</a>
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Start</a></li>
+      <li><a href="orakel.html">Orakel</a></li>
+      <li><a href="clicker.html">Gunst-Schmiede</a></li>
+      <li><a href="arena.html">Meteor-Arena</a></li>
+      <li><a href="quiz.html">Wissensarena</a></li>
+      <li><a href="soundboard.html">Klang-Schmiede</a></li>
+      <li><a href="memory.html">Gedächtnistempel</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="page">
+  <section class="tablet">
+    <p class="hud" style="color:var(--bronze);">CANVAS 2D · requestAnimationFrame</p>
+    <h1>Meteor-Arena</h1>
+    <p class="lede">Steuere den Gabeljungen mit den Pfeiltasten, <kbd>A</kbd>/<kbd>D</kbd> oder per Fingerzug
+      und weiche den fallenden Meteoren aus. Dein Highscore wird lokal gespeichert.</p>
+
+    <div class="hud-bar">
+      <div class="hud-stat"><span class="label">Punkte</span><span class="value" id="stat-score">0</span></div>
+      <div class="hud-stat"><span class="label">Highscore</span><span class="value" id="stat-high">0</span></div>
+      <div class="hud-stat"><span class="label">Leben</span><span class="value" id="stat-lives">❤❤❤</span></div>
+    </div>
+
+    <div id="game-wrap">
+      <canvas id="game-canvas" width="800" height="600"></canvas>
+      <div id="game-overlay">
+        <h2 style="margin:0;">Bereit?</h2>
+        <p class="lede" style="margin:0;">Weiche den Meteoren aus, solange du kannst.</p>
+        <button class="btn primary" id="btn-start">Spiel starten</button>
+      </div>
+    </div>
+    <p class="controls-hint">Steuerung: ← → oder A/D · Touch: ziehen · <button class="btn" id="btn-fullscreen" style="font-size:0.75rem; padding:0.4rem 0.8rem;">⛶ Vollbild</button></p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Kollisionserkennung, Highscore und Spielschleife laufen komplett im Browser.</p>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/arena.js"></script>
+</body>
+</html>
